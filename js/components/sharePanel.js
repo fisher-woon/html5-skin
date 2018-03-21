@@ -7,9 +7,13 @@
  * @class SharePanel
  * @constructor
  */
+
+window.sweetAlert = window.swal = require('sweetalert');
+
 var React = require('react'),
     ClassNames = require('classnames'),
     Utils = require('./utils'),
+    QRCode = require('qrcodejs2'),
     CONSTANTS = require('../constants/constants');
 
 var SharePanel = React.createClass({
@@ -56,6 +60,16 @@ var SharePanel = React.createClass({
           case "email":
             shareButtons.push(<a className="oo-email-share" onClick={this.handleEmailClick}></a>);
             break;
+          case "qq":
+            shareButtons.push(<a className="oo-qq-share" onClick={this.handleQQClick}></a>);
+            break;
+          case "weibo":
+            shareButtons.push(<a className="oo-weibo-share" onClick={this.handleWeiboClick}></a>);
+            break;
+          case "wechat":
+            shareButtons.push(<a className="oo-wechat-share" onClick={this.handleWeChatClick}></a>);
+            break;
+
         }
       }, this);
 
@@ -92,7 +106,7 @@ var SharePanel = React.createClass({
     var emailBody = Utils.getLocalizedString(this.props.language, CONSTANTS.SKIN_TEXT.EMAIL_BODY, this.props.localizableStrings);
     var mailToUrl = "mailto:";
     mailToUrl += "?subject=" + encodeURIComponent(this.props.contentTree.title);
-    mailToUrl += "&body=" + encodeURIComponent(emailBody + location.href);
+    mailToUrl += "&body=" + encodeURIComponent(emailBody + document.referrer);
     //location.href = mailToUrl; //same window
     if (OO.isIos && OO.isSafari) {
         document.location = mailToUrl;
@@ -114,22 +128,78 @@ var SharePanel = React.createClass({
 
   handleFacebookClick: function() {
     var facebookUrl = "http://www.facebook.com/sharer.php";
-    facebookUrl += "?u=" + encodeURIComponent(location.href);
+    facebookUrl += "?u=" + encodeURIComponent(document.referrer);
     window.open(facebookUrl, "facebook window", "height=315,width=780");
   },
 
   handleGPlusClick: function() {
     var gPlusUrl = "https://plus.google.com/share";
-    gPlusUrl += "?url=" + encodeURIComponent(location.href);
+    gPlusUrl += "?url=" + encodeURIComponent(document.referrer);
     window.open(gPlusUrl, "google+ window", "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600");
   },
 
   handleTwitterClick: function() {
     var twitterUrl = "https://twitter.com/intent/tweet";
     twitterUrl += "?text=" + encodeURIComponent(this.props.contentTree.title+": ");
-    twitterUrl += "&url=" + encodeURIComponent(location.href);
+    twitterUrl += "&url=" + encodeURIComponent(document.referrer);
     window.open(twitterUrl, "twitter window", "height=300,width=750");
   },
+
+  handleQQClick: function() {
+    var qqUrl = "http://connect.qq.com/widget/shareqq/index.html";
+    qqUrl += "?title=" + encodeURIComponent(this.props.contentTree.title+": ");
+    qqUrl += "&url=" + encodeURIComponent(document.referrer);
+    window.open(qqUrl, "qq window", "height=300,width=750");
+  },
+
+  handleWeiboClick: function() {
+    var weiboUrl = "http://service.weibo.com/share/share.php";
+    weiboUrl += "?title=" + encodeURIComponent(this.props.contentTree.title+": ");
+    weiboUrl += "&url=" + encodeURIComponent(document.referrer);
+    window.open(weiboUrl, "weibo window", "height=300,width=750");
+  },
+
+  handleWeChatClick: function() {
+    //https://github.com/akulubala/responsive-social-buttons
+
+    var url = document.referrer;
+    var title = "扫描二维码分享至微信";
+    var confirmText = "取消";
+    var qrDiv = undefined;
+    var qrcode = undefined;
+    var promise = new Promise(function(resolve, reject) {
+        var qrDiv = document.createElement('div');
+            qrDiv.setAttribute('id', 'qrcode');
+            resolve(qrDiv);
+    });
+    promise.then(function(qrDiv) {
+        var qr = new QRCode(qrDiv, {
+            text: url,
+            width: 200,
+            height: 200,
+            colorDark : "#000000",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+        return qrDiv;
+    }).then(function(html) {
+        var imgDatas = $(html).find('canvas')[0].toDataURL();
+        var imageDiv = document.createElement('img');
+        imageDiv.setAttribute('src',imgDatas);
+        swal({
+          content: imageDiv,
+          text: title,
+          allowOutsideClick: true,
+          button: {
+              text: confirmText,
+           }
+        });
+
+        $(".swal-overlay").css("z-index",100000);
+    })
+  },
+
+
 
   showPanel: function(panelToShow) {
     this.setState({activeTab: panelToShow});

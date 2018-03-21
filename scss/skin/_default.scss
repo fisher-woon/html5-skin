@@ -6,7 +6,7 @@
 // mainVideoInnerWrapper
 .oo-player {
   display: block;
-  position: relative;
+  position: inherit !important;
   overflow:hidden;
   vertical-align: top;
   background-color: $body-bg !important;

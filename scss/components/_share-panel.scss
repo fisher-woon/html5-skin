@@ -77,6 +77,23 @@
     background-size: cover;
   }
 
+  .oo-qq-share {
+    @extend .oo-social-icon;
+    background-image: url("assets/images/social-qq.png");
+  }
+
+  .oo-weibo-share {
+    @extend .oo-social-icon;
+    background-image: url("assets/images/social-weibo.png");
+  }
+
+  .oo-wechat-share {
+    @extend .oo-social-icon;
+    background-image: url("assets/images/social-wechat.png");
+  }
+
+
+
   .oo-embed-form {
     resize: none;
     height: calc(15vh);
