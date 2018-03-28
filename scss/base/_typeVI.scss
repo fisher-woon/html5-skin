@@ -1,0 +1,67 @@
+@at-root {
+  @font-face {
+    font-family: "ooyala-slick-type";
+    src: url('#{$font-path}/ooyala-slick-type.eot');
+    src: url('#{$font-path}/ooyala-slick-type.eot?#iefix') format('embedded-opentype'),
+    url('#{$font-path}/ooyala-slick-type.woff') format('woff'),
+    url('#{$font-path}/ooyala-slick-type.ttf') format('truetype'),
+    url('#{$font-path}/ooyala-slick-type.svg#alice') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+  }
+
+  /* OpenSans regular */
+  @font-face {
+    font-family: 'OpenSans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('OpenSans'), local('OpenSans-Regular'),
+    url('#{$font-path}/OpenSans-Regular.eot?v=1.1.0'),
+    url('#{$font-path}/OpenSans-Regular.eot?#iefix&v=1.1.0') format('embedded-opentype'),
+    url('#{$font-path}/OpenSans-Regular.woff?v=1.1.0') format('woff'),
+    url('#{$font-path}/OpenSans-Regular.ttf?v=1.1.0') format('truetype'),
+    url('#{$font-path}/OpenSans-Regular.svg?v=1.1.0#Regular') format('svg');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+  }
+
+  /* OpenSans bold */
+  @font-face {
+    font-family: 'OpenSans Bold';
+    font-style: normal;
+    font-weight: 700;
+    src: local('OpenSans Bold'), local('OpenSans-Bold'),
+    url('#{$font-path}/OpenSans-Bold.eot?v=1.1.0'),
+    url('#{$font-path}/OpenSans-Bold.eot?#iefix&v=1.1.0') format('embedded-opentype'),
+    url('#{$font-path}/OpenSans-Bold.woff?v=1.1.0') format('woff'),
+    url('#{$font-path}/OpenSans-Bold.ttf?v=1.1.0') format('truetype'),
+    url('#{$font-path}/OpenSans-Bold.svg?v=1.1.0#Bold') format('svg');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+  }
+}
+
+[data-icon] {
+  font-family: "ooyala-slick-type" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="oo-icon-"],
+[class*=" oo-icon-"] {
+  font-family: "ooyala-slick-type" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

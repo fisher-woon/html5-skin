@@ -10,28 +10,6 @@
     font-style: normal;
 
   }
-  /* roboto condensed regular */
-  @font-face {
-    font-family: 'Roboto Condensed';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Roboto Condensed'), local('RobotoCondensed-Regular'),
-    url('#{$font-path}/RobotoCondensed-Regular.woff2') format('woff2'),
-    url('#{$font-path}/RobotoCondensed-Regular.woff') format('woff'),
-    url('#{$font-path}/RobotoCondensed-Regular.ttf') format('truetype');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-  }
-  /* roboto condensed bold */
-  @font-face {
-    font-family: 'Roboto Condensed Bold';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Roboto Condensed Bold'), local('RobotoCondensed-Bold'),
-    url('#{$font-path}/RobotoCondensed-Bold.woff2') format('woff2'),
-    url('#{$font-path}/RobotoCondensed-Bold.woff') format('woff'),
-    url('#{$font-path}/RobotoCondensed-Bold.ttf') format('truetype');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-  }
 
   /* roboto regular */
   @font-face {
@@ -39,9 +17,11 @@
     font-style: normal;
     font-weight: 400;
     src: local('Roboto'), local('Roboto-Regular'),
-    url('#{$font-path}/Roboto-Regular.woff2') format('woff2'),
-    url('#{$font-path}/Roboto-Regular.ttf') format('truetype'),
-    url('#{$font-path}/Roboto-Regular.woff') format('woff');
+    url('#{$font-path}/Roboto-Regular-webfont.eot'),
+    url('#{$font-path}/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('#{$font-path}/Roboto-Regular-webfont.woff') format('woff'),
+    url('#{$font-path}/Roboto-Regular-webfont.ttf') format('truetype'),
+    url('#{$font-path}/Roboto-Regular-webfont.svg#robotoregular') format('svg');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
   }
 
@@ -51,33 +31,11 @@
     font-style: normal;
     font-weight: 700;
     src: local('Roboto Bold'), local('Roboto-Bold'),
-    url('#{$font-path}/Roboto-Bold.woff2') format('woff2'),
-    url('#{$font-path}/Roboto-Bold.ttf') format('truetype'),
-    url('#{$font-path}/Roboto-Bold.woff') format('woff');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-  }
-
-  /* Open Sans regular */
-  @font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Open Sans'), local('OpenSans'),
-    url('#{$font-path}/OpenSans.woff2') format('woff2'),
-    url('#{$font-path}/OpenSans.woff') format('woff'),
-    url('#{$font-path}/OpenSans.ttf') format('truetype');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-  }
-
-  /* Open Sans regular */
-  @font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Open Sans'), local('OpenSans'),
-    url('#{$font-path}/OpenSans.woff2') format('woff2'),
-    url('#{$font-path}/OpenSans.woff') format('woff'),
-    url('#{$font-path}/OpenSans.ttf') format('truetype');
+    url('#{$font-path}/Roboto-Bold-webfont.eot'),
+    url('#{$font-path}/Roboto-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('#{$font-path}/Roboto-Bold-webfont.woff') format('woff'),
+    url('#{$font-path}/Roboto-Bold-webfont.ttf') format('truetype'),
+    url('#{$font-path}/Roboto-Bold-webfont.svg#robotoregular') format('svg');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
   }
 }

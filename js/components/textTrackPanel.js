@@ -86,7 +86,7 @@ var TextTrackPanel = React.createClass({
   setTextStyle: function(color, opacity, fontType, fontSize, textEnhancement, direction) {
     var styles = {
       color: "rgba(" + this.colorMap[color] + "," + opacity + ")",
-      fontFamily: this.fontTypeMap[fontType],
+      //fontFamily: this.fontTypeMap[fontType],
       fontVariant: this.fontVariantMap[fontType],
       fontSize: this.fontSizeMap[fontSize][this.props.responsiveView],
       textShadow: this.textEnhancementMap[textEnhancement]

@@ -49,17 +49,8 @@ var ClosedCaptionPanel = React.createClass({
             <Tab title={colorSelectionTabTitle}>
               <ColorSelectionTab {...this.props} />
             </Tab>
-            <Tab title={captionOpacityTabTitle}>
-              <CaptionOpacityTab {...this.props} />
-            </Tab>
-            <Tab title={fontTypeTabTitle}>
-              <FontTypeTab {...this.props} />
-            </Tab>
             <Tab title={fontSizeTabTitle}>
               <FontSizeTab {...this.props} />
-            </Tab>
-            <Tab title={textEnhancementsTabTitle}>
-              <TextEnhancementsTab {...this.props} />
             </Tab>
           </Tabs>
 

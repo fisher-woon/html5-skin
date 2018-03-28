@@ -1,0 +1,67 @@
+@at-root {
+  @font-face {
+    font-family: "ooyala-slick-type";
+    src: url('#{$font-path}/ooyala-slick-type.eot');
+    src: url('#{$font-path}/ooyala-slick-type.eot?#iefix') format('embedded-opentype'),
+    url('#{$font-path}/ooyala-slick-type.woff') format('woff'),
+    url('#{$font-path}/ooyala-slick-type.ttf') format('truetype'),
+    url('#{$font-path}/ooyala-slick-type.svg#alice') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+  }
+
+  /* NotoSansJP regular */
+  @font-face {
+    font-family: 'NotoSansJP';
+    font-style: normal;
+    font-weight: 400;
+    src: local('NotoSansJP'), local('NotoSansJP-Regular'),
+    url('#{$font-path}/NotoSansJP-Regular-Alphabetic.eot'),
+    url('#{$font-path}/NotoSansJP-Regular-Alphabetic.eot?#iefix') format('embedded-opentype'),
+    url('#{$font-path}/NotoSansJP-Regular-Alphabetic.woff') format('woff'),
+    url('#{$font-path}/NotoSansJP-Regular-Alphabetic.ttf') format('truetype'),
+    url('#{$font-path}/NotoSansJP-Regular-Alphabetic.svg#NotoSansJP') format('svg');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+  }
+
+  /* NotoSansJP bold */
+  @font-face {
+    font-family: 'NotoSansJP Bold';
+    font-style: normal;
+    font-weight: 700;
+    src: local('NotoSansJP Bold'), local('NotoSansJP-Bold'),
+    url('#{$font-path}/NotoSansJP-Regular-Alphabetic.eot'),
+    url('#{$font-path}/NotoSansJP-Regular-Alphabetic.eot?#iefix') format('embedded-opentype'),
+    url('#{$font-path}/NotoSansJP-Regular-Alphabetic.woff') format('woff'),
+    url('#{$font-path}/NotoSansJP-Regular-Alphabetic.ttf') format('truetype'),
+    url('#{$font-path}/NotoSansJP-Regular-Alphabetic.svg#NotoSansJP') format('svg');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+  }
+}
+
+[data-icon] {
+  font-family: "ooyala-slick-type" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="oo-icon-"],
+[class*=" oo-icon-"] {
+  font-family: "ooyala-slick-type" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

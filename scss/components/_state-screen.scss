@@ -181,7 +181,7 @@
   @include vendor-prefixes(animation-duration, 5s);
   @include vendor-prefixes(animation-delay, 1s);
   &-container {
-    font-family: Roboto, "Open Sans", sans-serif;
+    font-family: $font-family-roboto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;

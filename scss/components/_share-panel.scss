@@ -3,11 +3,19 @@
   .oo-tab-row {
     line-height: 1;
 
+    @media (min-width: 481px) {
+        padding-top: 15%;
+        padding-left: 47%;
+    }
+
     .oo-tab {
       display: inline-block;
       color: #afafaf;
       font-weight: bold;
       padding-right: 25px;
+      @media (min-width: 481px) {
+          font-size: 1.6em;
+      }
       &:last-child {
         padding-left: 0;
       }
@@ -45,6 +53,10 @@
     display: inline-block;
     height: 38px;
     width: 38px;
+    @media (min-width: 481px) {
+        height: 48px;
+        width: 48px;
+    }
     margin-bottom: $panel-padding/2;
     margin-right: 20px;
     background-size: contain;
