@@ -49,25 +49,25 @@ var SharePanel = React.createClass({
       socialContent.forEach(function(shareButton) {
         switch (shareButton) {
           case "twitter":
-            shareButtons.push(<a className="oo-twitter" onClick={this.handleTwitterClick}></a>);
+            shareButtons.push(<a className="oo-twitter" key="twitter" onClick={this.handleTwitterClick}></a>);
             break;
           case "facebook":
-            shareButtons.push(<a className="oo-facebook" onClick={this.handleFacebookClick}></a>);
+            shareButtons.push(<a className="oo-facebook" key="facebook" onClick={this.handleFacebookClick}></a>);
             break;
           case "google+":
-            shareButtons.push(<a className="oo-google-plus" onClick={this.handleGPlusClick}></a>);
+            shareButtons.push(<a className="oo-google-plus" key="google" onClick={this.handleGPlusClick}></a>);
             break;
           case "email":
-            shareButtons.push(<a className="oo-email-share" onClick={this.handleEmailClick}></a>);
+            shareButtons.push(<a className="oo-email-share" key="email" onClick={this.handleEmailClick}></a>);
             break;
           case "qq":
-            shareButtons.push(<a className="oo-qq-share" onClick={this.handleQQClick}></a>);
+            shareButtons.push(<a className="oo-qq-share" key="qq" onClick={this.handleQQClick}></a>);
             break;
           case "weibo":
-            shareButtons.push(<a className="oo-weibo-share" onClick={this.handleWeiboClick}></a>);
+            shareButtons.push(<a className="oo-weibo-share" key="weibo" onClick={this.handleWeiboClick}></a>);
             break;
           case "wechat":
-            shareButtons.push(<a className="oo-wechat-share" onClick={this.handleWeChatClick}></a>);
+            shareButtons.push(<a className="oo-wechat-share" key="wechat" onClick={this.handleWeChatClick}></a>);
             break;
 
         }
@@ -110,6 +110,7 @@ var SharePanel = React.createClass({
     //location.href = mailToUrl; //same window
     if (OO.isIos && OO.isSafari) {
         document.location = mailToUrl;
+        window.open(mailToUrl, "email", "height=315,width=780"); //new window
     } else {
         var emailWindow = window.open(mailToUrl, "email", "height=315,width=780"); //new window
         setTimeout(function () {
@@ -161,7 +162,6 @@ var SharePanel = React.createClass({
 
   handleWeChatClick: function() {
     //https://github.com/akulubala/responsive-social-buttons
-
     var url = document.referrer;
     var title = "扫描二维码分享至微信";
     var confirmText = "取消";
@@ -230,7 +230,9 @@ var SharePanel = React.createClass({
     });
 
     var shareString = Utils.getLocalizedString(this.props.language, CONSTANTS.SKIN_TEXT.SHARE, this.props.localizableStrings),
+    //var shareString = Utils.getLocalizedString(this.props.skinConfig.closedCaptionOptions.language, CONSTANTS.SKIN_TEXT.SHARE, this.props.localizableStrings),
         embedString = Utils.getLocalizedString(this.props.language, CONSTANTS.SKIN_TEXT.EMBED, this.props.localizableStrings);
+        //embedString = Utils.getLocalizedString(this.props.skinConfig.closedCaptionOptions.language, CONSTANTS.SKIN_TEXT.EMBED, this.props.localizableStrings);
 
     return (
       <div className="oo-content-panel oo-share-panel">
